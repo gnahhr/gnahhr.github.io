@@ -18,7 +18,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Yusei Magic', sans-serif;
     font-size: 16px;
     line-height: 1.6rem;
     min-height: 100vh;
@@ -53,11 +53,6 @@ header {
 
 header h1 {
     margin-top: 5px;
-    color: #ffe6e6;
-    margin-right: auto;
-}
-
-header h2 {
     color: #ffe6e6;
     margin-right: auto;
 }
