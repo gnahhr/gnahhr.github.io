@@ -32,6 +32,13 @@ a {
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
+    transition: 0.2s;
+}
+
+a:hover {
+    background: #8c54ac;
+    color: #e5ba3f;
+    font-weight: bolder;
 }
 
 .container {
