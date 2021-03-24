@@ -20,7 +20,7 @@
 body {
     font-family: 'Yusei Magic', sans-serif;
     font-size: 16px;
-    line-height: 1.6rem;
+    line-height: 2rem;
     min-height: 100vh;
     min-width: 100vh;
 }
@@ -123,6 +123,25 @@ header nav ul li a {
     max-width: max-content;
     margin: auto;
     text-align: center;
+}
+
+#main-block .info p {
+    max-width: max-content;
+    margin: 0 25%;
+    line-height: 1rem;
+    text-align: justify;
+}
+
+.own-pic {
+    display: block;
+}
+
+.own-pic img {
+    display: flex;
+    height: 200px;
+    margin: auto;
+    padding: 5%;
+    border-radius: 50%;
 }
 
 
