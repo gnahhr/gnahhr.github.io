@@ -136,7 +136,7 @@ header nav ul li a {
     display: block;
 }
 
-.own-pic img {
+#main-block .own-pic img {
     display: flex;
     height: 200px;
     margin: auto;
