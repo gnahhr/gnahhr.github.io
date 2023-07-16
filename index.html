@@ -1,49 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-    <title>gnahhr's Portfolio Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>Portfolio</title>
 </head>
-
 <body>
-    <!-- Header-->
-    <div id="top-block">
-        <header>
-            <h1>gnahhr's Portfolio Site</h1>
-            <nav>
-                <ul>
-                    <li id="active"><a href="#">HOME</a></li>
-                    <li><a href="#">PROJECTS</a></li>
-                    <li><a href="./pages/about.html">ABOUT ME</a></li>
-                    <li><a href="https://drive.google.com/file/d/1ENFqpr75xFVELSue3uXdPp4s27SI2PXY/view?usp=sharing" target="_blank">RESUME</a></li>
-                </ul>
-            </nav>
-        </header>
+  <header>
+    <span class="name">MG</span>
+    <div class="btn-group">
+      <span class="back-btn">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      </span>
+      <span id="dark-mode-btn">
+        <!-- <i class="fa-regular fa-moon"></i>
+        <i class="fa-regular fa-sun"></i> -->
+      </span>
     </div>
+  </header>
+  <main>
+    <div class="grid-item intro">
+      <h1>Hello, I'm Matt Gabriel Domingo</h1>
+      <span>Programmer</span>
+    </div>
+    <div class="grid-item about expandable">
+      <h1>About Me</h1>
+      <div class="summary">
+        <p>A developer that aims to assist people to make their imaginations in technology into reality.</p>
+        <span>Learn More ></span>
+      </div>  
+      <div class="grid-content">
+        <img src="./images/profile.jpg" alt="">
+        <div class="information">
+          <p>I'm Matt Gabriel Domingo, a full-stack web developer. Being able to learn advancing technologies get me excited may it be about web, software or even game development. I am eager to learn new things and expand my arsenal of languages and knowledge to cater what is needed for a self or assigned project.</p>
+          <p>Becoming a developer is my goal to assist those who imagine applications and make them into reality.</p>
+          <a href="https://drive.google.com/file/d/1qHuFqcvIis42CbvpVGJ1bWKSgTKbrCJK/view?usp=sharing" id="resume-btn" target="blank">
+            <span>RESUME</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="grid-item projects expandable">
+      <h1>Projects</h1>
+      <div class="grid-content" id="projects">
+        <div class="grid-nav">
+          <ul>
+            
+          </ul>
+        </div>
+        <div class="project-gallery">
+          <h2>Project #1</h2>
+          <div class="carousel">
+            <img src="" alt="image">
+            <div class="carousel-controls">
+              <button class="left-chevron">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <div class="circles">
+  
+              </div>
+              <button class="right-chevron">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="tech-stack">
+            
+          </div>
+          <div class="links">
 
-    <!-- Main Block -->
-    <section id="main-block">
-        <div id="laptop">
-            <img src="./images/laptop.png" alt="laptop">
+          </div>
         </div>
-        <div class="container">
-            <h1>Hello, I'm Matt Gabriel C. Domingo</h1>
-            <h2>a programmer</h2>
+        <div class="project-summary"></div>
+      </div>
+    </div>
+    <div class="grid-item skills">
+      <h1>Skills</h1>
+      <div class="skill-set">
+        <i class="fa-brands fa-html5"></i>
+        <i class="fa-brands fa-css3"></i>
+        <i class="fa-brands fa-square-js"></i>
+        <i class="fa-brands fa-react"></i>
+        <i class="fa-brands fa-node-js"></i>
+        <i class="fa-brands fa-git-alt"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-bitbucket"></i>
+        <i class="fa-brands fa-python"></i>
+      </div>
+    </div>
+    <div class="grid-item contact expandable">
+      <h1>Contact Me</h1>
+      <div class="grid-content">
+        <p>cs.mattgabrieldomingo@gmail.com</p>
+        <!-- <a href="mailto:cs.mattgabrieldomingo@gmail.com">Send e-mail</a> -->
+        <div class="socials">
+          <a href="https://www.github.com/gnahhr" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/matt-domingo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <div class="container subtext">
-            <p>I'm currently a student studying at Don Honorio Ventura State University in Pampanga, Philippines. <br>Learning things that pique my interest with gusto. </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Copyright &copy; 2021</p>
-    </footer>
+      </div>
+    </div>
+  </main>
+  <footer>&copy; 2023</footer>
+  <script src="https://kit.fontawesome.com/1c5f5d1317.js" crossorigin="anonymous"></script>
+  <script src="animate.js"></script>
+  <script src="project.js"></script>
 </body>
-
-</html>
+</html> 
