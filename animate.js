@@ -6,16 +6,12 @@ const backBtn = document.querySelectorAll('.back-btn')[0];
 const body = document.querySelector('body');
 const darkBtn = document.querySelector('#dark-mode-btn');
 
-let clickedInitialSize, clickedInitialPos, activeDiv;
+let clickedInitialSize, clickedInitialPos, activeDiv,
+    clickedFinalSize, clickedFinalPos, clickedFinalBG;
 
 const gridAnimate = (grid) => {
-  if (window.innerHeight > window.innerWidth) {
-    grid.classList.toggle('expanded');
-    return;
-  };
-
   const initialSize = `height: ${grid.offsetHeight-6}px; width:${grid.offsetWidth-6}px;`;
-  const finalSize = `width: calc(100% - 6px); height: calc(100% - 6px);`;
+  const finalSize = `width: calc(100% - 6px); height: max-content;`;
 
   const initialPos = `position: absolute; top: ${grid.offsetTop}px; left: ${grid.offsetLeft}px;`;
   const finalPos = `margin: 0; top: 0; left: 0;`;
@@ -27,20 +23,28 @@ const gridAnimate = (grid) => {
   const content = Array.prototype.slice.call(grid.children);
 
   if (!grid.classList.contains("active")) {
+    backBtn.style.cssText = `display: block;`;
+    activeDiv = grid;
+
+    if (window.innerHeight > window.innerWidth) {
+      grid.classList.toggle('active');
+      return
+    }
+
     content.forEach(el => {
       el.style.cssText += displayInit;
     })
 
     clickedInitialSize = initialSize;
     clickedInitialPos = initialPos;
+    clickedFinalPos = finalPos;
+    clickedFinalSize = finalSize;
+    clickedFinalBG = finalBackground;
     
     divs.forEach(el => { if (el !== grid) { lowerGridOpacity(el); } })
 
     grid.style.cssText = initialPos + initialSize + backgroundInit;
     grid.classList.toggle('active');
-
-    backBtn.style.cssText = `display: block;`;
-    
 
     setTimeout(() => {
       grid.style.cssText += finalSize + finalPos + finalBackground;
@@ -50,11 +54,11 @@ const gridAnimate = (grid) => {
       content.forEach(el => {
         el.style.cssText -= displayInit;
       })
+      grid.style.cssText = "";
     }, 450);
-
-    activeDiv = grid;
+    
   } else {  
-    grid.removeEventListener('click', () => gridAnime());
+    grid.removeEventListener('click', () => gridAnimate());
   }
 }
 
@@ -63,7 +67,11 @@ const backHandler = () => {
   const content = Array.prototype.slice.call(activeDiv.children);
   const displayInit = `opacity: 0; `;
 
-  activeDiv.style.cssText = clickedInitialSize + clickedInitialPos + backgroundInit;
+  activeDiv.style.cssText += clickedFinalSize + clickedFinalPos + clickedFinalBG;
+
+  setTimeout(() => {
+    activeDiv.style.cssText = clickedInitialSize + clickedInitialPos + backgroundInit;
+  }, 50)
 
   content.forEach(el => {
     el.style.cssText += displayInit;

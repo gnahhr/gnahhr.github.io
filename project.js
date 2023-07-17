@@ -27,7 +27,7 @@ const projectList = [
     ],
     code: "https://github.com/gnahhr/websys-php-finals",
     live: "",
-    techStack: ["PHP", "MySQL", "HTML", "CSS"],
+    techStack: ["HTML", "CSS", "PHP", "MySQL"],
     active: false
   },
   {
@@ -53,7 +53,7 @@ const projectsNavDiv = document.getElementsByClassName("grid-nav")[0].querySelec
 const projectsInfoDiv = projectsDiv.getElementsByClassName("project-gallery")[0];
 const projectsSummaryDiv = projectsDiv.getElementsByClassName("project-summary")[0];
 const linksDiv = projectsInfoDiv.getElementsByClassName("links")[0];
-const techStackDiv = projectsInfoDiv.getElementsByClassName("techp-stack")[0];
+const techStackDiv = projectsInfoDiv.getElementsByClassName("tech-stack")[0];
 
 // Project Carousel Elements
 const carouselNav = projectsInfoDiv.getElementsByClassName("carousel-controls")[0];
@@ -78,12 +78,20 @@ const updateProject = (activeProject) => {
 
   selectedProject = activeProject;
   projectsSummaryDiv.innerHTML = "";
+  techStackDiv.innerHTML = "";
 
   projectSummary.innerText = data.summary;
   projectsInfoDiv.querySelector("img").src = data.images[curPos];
   projectsInfoDiv.querySelector("h2").innerText = data.name;
 
   projectsSummaryDiv.append(projectSummary);
+  
+  data.techStack.forEach(tech => {
+    const techStack = document.createElement("span");
+    techStack.innerText = tech;
+    techStackDiv.append(techStack);
+  })
+
   updateLinks(data);
   updateCarousel(curPos, data);
 

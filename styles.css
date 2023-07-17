@@ -15,7 +15,7 @@ body {
   background-color: var(--background);
   color: var(--main); 
   font-family: 'Roboto Mono', monospace;
-  overflow: hidden;
+  /* overflow: hidden; */
   
   transition: 250ms ease-in-out;
 }
@@ -23,6 +23,10 @@ body {
 body.dark-mode {
   background-color: var(--main);
   color: var(--background); 
+}
+
+body.dark-mode main:has(.active) > :is(.active) {
+  border: 8px solid var(--background);
 }
 
 body.dark-mode .about:hover .summary span {
@@ -90,8 +94,8 @@ main {
   margin: auto 2rem;
   border: 5px solid var(--main);
   min-height: 25rem;
-  height: 75vh;
-  max-height: 1846px;
+  /* height: max-content; */
+  /* max-height: 1846px; */
   display: grid;
   position: relative;
 }
@@ -106,6 +110,10 @@ main:not(:has(.active)) {
   ;
 }
 
+main:has(.active) {
+  border: none;
+}
+
 main:has(.active) > *:not(.active) {
   opacity: 0;
   display: none;
@@ -114,6 +122,10 @@ main:has(.active) > *:not(.active) {
 main:has(.active) > :is(.active) {
   justify-content: flex-start;
   align-items: center;
+  flex: 1;
+  border: 8px solid var(--main);
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
 }
 
 /* General CSS */
@@ -237,11 +249,24 @@ main:has(.active) > :is(.active) {
 }
 
 .project-gallery img {
-  height: clamp(190px, 15vw, 410px);
+  height: clamp(100px, 16vw, 410px);
   aspect-ratio: 16 / 8;
   object-fit: fill;
   border: 2px solid var(--main);
   box-shadow: 4px 4px var(--main);
+}
+
+.project-gallery .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1ch;
+  margin: .2rem auto;
+  font-size: max(1.25vw, 15px);
+}
+
+.projects.active .grid-content h2 {
+  margin-bottom: .2rem;
 }
 
 .projects.active .grid-content {
@@ -389,12 +414,16 @@ main:has(.active) > :is(.active) {
 }
 
 .about.active .information a {
+  display: block;
   text-decoration: none;
   padding: .5rem;
+  width: max-content;
+  margin: 1rem auto;
   border-radius: 16px;
   color: var(--background);
   background-color: var(--main);
   border: 2px solid var(--main);
+
 }
 
 .about.active .information a:hover {
@@ -434,14 +463,22 @@ main:has(.active) > :is(.active) {
 .contact.active{
   flex-direction: column;
   justify-content: center !important;
-  margin: auto;
 }
 
-.contact .grid-content p {
+.contact .grid-content #mailto {
   margin: auto;
+  /* text-decoration: none; */
+  color: var(--main);
   font-size: clamp(10px, 3vw, 1.4rem);
   font-weight: bold;
 }
+
+.contact .grid-content #mailto:hover {
+  color: var(--background);
+  background-color: var(--main);
+}
+
+
 
 .contact .grid-content .socials {
   margin: 1rem auto;
@@ -506,9 +543,35 @@ footer {
 }
 
 /* 900px width */
+@media only screen and (max-width: 990px) and (max-height: 570px) {
+  .projects.active .grid-content,
+  .about.active .grid-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projects.active .grid-content .grid-nav {
+    grid-column: 1 / span 2;
+  }
+
+  .grid-nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .grid-nav ul li {
+    margin-left: 2rem;
+  }
+  
+  .grid-nav ul li.grid-nav-active,
+  .grid-nav ul li:hover {
+    text-indent: 0;
+    margin-top: .25rem;
+  }
+}
 
 
-@media (orientation: portrait) {
+@media only screen and (max-width: 660px) {
   body {
     overflow: auto;
   }
