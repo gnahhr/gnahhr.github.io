@@ -543,7 +543,7 @@ footer {
 }
 
 /* 900px width */
-@media only screen and (max-width: 990px) and (min-height: 570px) {
+@media only screen and (max-width: 990px) and (min-height: 570px) and (orientation:portrait) {
   .projects.active .grid-content,
   .about.active .grid-content {
     display: flex;
