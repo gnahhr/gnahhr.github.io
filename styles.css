@@ -543,7 +543,7 @@ footer {
 }
 
 /* 900px width */
-@media only screen and (max-width: 990px) and (max-height: 570px) {
+@media only screen and (max-width: 990px) and (min-height: 570px) {
   .projects.active .grid-content,
   .about.active .grid-content {
     display: flex;
@@ -571,7 +571,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 660px) and (orientation:portrait) {
   body {
     overflow: auto;
   }
