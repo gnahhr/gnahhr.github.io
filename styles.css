@@ -543,7 +543,7 @@ footer {
 }
 
 /* 900px width */
-@media only screen and (max-width: 990px) and (min-height: 570px) and (orientation:portrait) {
+@media only screen and (max-width: 990px) and (min-height: 570px) {
   .projects.active .grid-content,
   .about.active .grid-content {
     display: flex;
@@ -595,6 +595,31 @@ footer {
   main {
     max-height: fit-content;
     height: fit-content;
+  }
+
+  .projects.active .grid-content,
+  .about.active .grid-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projects.active .grid-content .grid-nav {
+    grid-column: 1 / span 2;
+  }
+
+  .grid-nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .grid-nav ul li {
+    margin-left: 2rem;
+  }
+  
+  .grid-nav ul li.grid-nav-active,
+  .grid-nav ul li:hover {
+    text-indent: 0;
+    margin-top: .25rem;
   }
 
   footer {
