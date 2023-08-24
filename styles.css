@@ -246,6 +246,7 @@ main:has(.active) > :is(.active) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: .5rem;
 }
 
 .project-gallery img {

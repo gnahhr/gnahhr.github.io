@@ -22,6 +22,8 @@ const gridAnimate = (grid) => {
   const displayInit = `opacity: 0; `;
   const content = Array.prototype.slice.call(grid.children);
 
+  const overflowAnimStart = `overflow: hidden`;
+
   if (!grid.classList.contains("active")) {
     backBtn.style.cssText = `display: block;`;
     activeDiv = grid;
@@ -45,6 +47,7 @@ const gridAnimate = (grid) => {
 
     grid.style.cssText = initialPos + initialSize + backgroundInit;
     grid.classList.toggle('active');
+    body.style.cssText = overflowAnimStart;
 
     setTimeout(() => {
       grid.style.cssText += finalSize + finalPos + finalBackground;
@@ -55,6 +58,7 @@ const gridAnimate = (grid) => {
         el.style.cssText -= displayInit;
       })
       grid.style.cssText = "";
+      body.style.cssText -= overflowAnimStart;
     }, 450);
     
   } else {  
