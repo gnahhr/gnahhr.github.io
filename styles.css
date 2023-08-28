@@ -74,6 +74,7 @@ body.dark-mode .about img,
 body.dark-mode .project-gallery img {
   border: 2px solid var(--background);
   box-shadow: 4px 4px var(--background);
+  margin: 1rem;
 }
 
 body.dark-mode #dark-mode-btn {
