@@ -45,17 +45,6 @@ const projectList = [
     techStack: ["MongoDB", "Express.js", "React.js", "Node.js"],
     active: false
   },
-  {
-    name: "GCG Website",
-    summary: "A static website for a government agency that features the agency's services, news, and contact information. It is a responsive website that can be viewed on mobile and desktop devices.",
-    images: [
-      "./images/projects/gcg/landing-page.png",
-    ],
-    code: "",
-    live: "https://gcg.gov.ph/",
-    techStack: ["HTML", "CSS", "SASS", "AlpineJS"],
-    active: false
-  }
 ]
 
 // Container Elements
